@@ -1,0 +1,29 @@
+@port=3000
+@host=http://localhost:{{port}}
+
+### GET all notes
+GET {{host}}/notes
+
+### GET existing note
+GET {{host}}/notes/5
+
+### POST new note with text
+POST {{host}}/notes
+Content-Type: application/json
+
+{
+  "text": "lorem ipsum"
+}
+
+### TODO: Add more requests to test
+
+### GET nonexistent note
+GET {{host}}/notes/91
+
+### POST new note w/o text
+POST {{host}}/notes
+Content-Type: application/json
+
+{
+  "txt": "lorem ipsum"
+}
